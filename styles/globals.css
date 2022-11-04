@@ -1,4 +1,6 @@
-html,
+html{
+  font-size: 52.5%;
+}
 body {
   padding: 0;
   margin: 0;
@@ -15,12 +17,124 @@ a {
   box-sizing: border-box;
 }
 
+.app{
+  background: url(/bg1.jpg);
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.main{
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+  padding: 5rem;
+ 
+  
+}
+
+.location-box .location{
+  color: #fff;
+  font-size: 3.2rem;
+  font-weight: 500;
+  text-align: center;
+  /* justify-content: center; */
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location-box .date{
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 200;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box {
+  text-align: center;
+
+}
+
+.weather-box .temp{
+  position: relative;
+  display: inline-block;
+  margin: 3rem auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1.6rem;
+  padding: 2rem 3rem;
+  color: #fff;
+  font-size: 10rem;
+  font-weight: 900;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 3px 6px rgba(0,0,0,0.2);
+}
+
+.weather-box .weather{
+  color: #fff;
+  font-size: 4.8rem;
+  font-weight: 700;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+
+
+}
+
+.search-btn{
+  background: transparent;
+  margin-top: 2rem;
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  outline: none;
+  border: .1rem solid #fff;
+  font-size: 2rem;
+  cursor: pointer;
+
+}
+.search-btn:hover{
+  background-color: #000;
+  border: none;
+  
+}
+
+.search-box{
+  width: 100%;
+  margin: 0 0 7.5rem;
+
+}
+.search-box .searchbar{
+display: block;
+width: 100%;
+padding: 1.5rem;
+appearance: none;
+background: none;
+border: none;
+outline: none;
+background-color: rgba(255, 255, 255, 0.5);
+border-radius: 0px 0px 1.6rem 1.6rem;
+color: #313131;
+font-size: 2rem;
+
+}
+
+.search-box .searchbar:focus{
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.error{
+  color: #fff;
+  font-size: 2rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: #000;
+    background: #fff;
   }
 }
