@@ -15,7 +15,7 @@ const LandingPage = () => {
     url: "https://weatherapi-com.p.rapidapi.com/current.json",
     params: { q: "Ponda" },
     headers: {
-      "X-RapidAPI-Key": "000d8dcac3msh0d7616e1e01d200p145157jsn5bee344c57a0",
+      "X-RapidAPI-Key": `${process.env.apiKey}`,
       "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
     },
   };
