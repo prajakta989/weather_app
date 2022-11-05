@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Weatherdata from "./Weatherdata";
 
 const Cities = () => {
   const [search, setSearch] = useState("");
   const [errors, setError] = useState(false);
-  
+
   const [weather, setWeather] = useState({});
   console.log(search);
   const searchData = (evt) => {
@@ -34,18 +35,21 @@ const Cities = () => {
           setWeather(data);
           setSearch("");
           setError(false);
-
-          
         })
         .catch(function (error) {
           console.error(error);
           setError(true);
-          setWeather("")
+          setWeather("");
         });
     }
   };
 
   console.log("weather", weather);
+
+  // let country = weather.location.region;
+  // let temp = weather.current.temp_c;
+  // let img = weather.current.condition.icon;
+  // let text = weather.current.condition.text;
 
   const dateBuilder = (d) => {
     let months = [
@@ -93,29 +97,25 @@ const Cities = () => {
               onKeyDown={(e) => searchData(e)}
             />
             {errors && (
-            <div className="error">
-              <span><p>Could not fetch the results</p></span>
-            </div>
-          )}
+              <div className="error">
+                <span>
+                  <p>Could not fetch the results</p>
+                </span>
+              </div>
+            )}
           </div>
-          
+
           {typeof weather.location != "undefined" ? (
             <div>
-              <div className="location-box">
-                <div className="location">
-                  {weather.location.name}, {weather.location.region}
-                </div>
-                <div className="date">{dateBuilder(new Date())}</div>
-              </div>
-              <div className="weather-box">
-                <div className="temp">
-                  {Math.round(weather.current.temp_c)}&#x2103;
-                </div>
-                <div>
-                  <img src={weather.current.condition.icon} />
-                </div>
-                <div className="weather">{weather.current.condition.text}</div>
-              </div>
+              <Weatherdata
+                city={weather.location.name}
+                country={weather.location.region}
+                date={dateBuilder(new Date())}
+                temp={Math.round(weather.current.temp_c)}
+                // img={`https:${weather.current.condition.icon`}}
+                img={`https:${weather.current.condition.icon}`}
+                text={weather.current.condition.text}
+              />
             </div>
           ) : (
             ""

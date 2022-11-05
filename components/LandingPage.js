@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import Cities from "./Cities";
+import Weatherdata from "./Weatherdata";
 
 const LandingPage = () => {
   const [city, setCity] = useState("");
@@ -77,31 +78,21 @@ const LandingPage = () => {
 
   // }
   return (
-    <div>
-      {!city ? (
-        ""
-      ) : (
-        <div className="app">
-          <div className="main">
-            <div className="location-box">
-              <div className="location">
-                {city}, {country}
-              </div>
-              <div className="date">{dateBuilder(new Date())}</div>
-            </div>
-            <div className="weather-box">
-              <div className="temp">{Math.round(temp)}&#x2103;</div>
-              <div>
-                <img src={img} />
-              </div>
-              <div className="weather">{weather}</div>
-              <Link href="./cities">
-                <button className="search-btn">Search a City</button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+    <div className="app">
+      <div className="main">
+        {!city ? (
+          ""
+        ) : (
+          <Weatherdata
+            city={city}
+            country={country}
+            date={dateBuilder(new Date())}
+            temp={Math.round(temp)}
+            img={`https:${img}`}
+            text={weather}
+          />
+        )}
+      </div>
     </div>
   );
 };
