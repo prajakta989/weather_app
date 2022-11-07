@@ -30,5 +30,9 @@ Get your API key here: [https://rapidapi.com/weatherapi/api/weatherapi-com]("htt
     ```
     ${process.env.apiKey}
     ```
-
 ![](./banner.png)
+
+
+
+
+
