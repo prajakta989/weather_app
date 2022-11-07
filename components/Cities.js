@@ -112,7 +112,6 @@ const Cities = () => {
                 country={weather.location.region}
                 date={dateBuilder(new Date())}
                 temp={Math.round(weather.current.temp_c)}
-                // img={`https:${weather.current.condition.icon`}}
                 img={`https:${weather.current.condition.icon}`}
                 text={weather.current.condition.text}
               />
