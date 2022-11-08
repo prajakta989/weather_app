@@ -15,7 +15,7 @@ yarn dev
 ```
 
 ## App Configuraion
-Get your API key here: [https://rapidapi.com/weatherapi/api/weatherapi-com]("https://rapidapi.com/weatherapi/api/weatherapi-com/")
+Get your API key here: [ API Key](https://rapidapi.com/weatherapi/api/weatherapi-com/)
 
 
 
