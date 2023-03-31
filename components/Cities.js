@@ -51,37 +51,7 @@ const Cities = () => {
   // let img = weather.current.condition.icon;
   // let text = weather.current.condition.text;
 
-  const dateBuilder = (d) => {
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-
-    return `${day} ${date} ${month} ${year}`;
-  };
+  
 
   return (
     <div>
@@ -110,10 +80,10 @@ const Cities = () => {
               <Weatherdata
                 city={weather.location.name}
                 country={weather.location.region}
-                date={dateBuilder(new Date())}
                 temp={Math.round(weather.current.temp_c)}
                 img={`https:${weather.current.condition.icon}`}
                 text={weather.current.condition.text}
+                showSearchBtn={true}
               />
             </div>
           ) : (
